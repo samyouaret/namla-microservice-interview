@@ -16,6 +16,8 @@
       "strict": true,
       "strictPropertyInitialization": false,
       "types": [
+         "reflect-metadata",
+         "jest",
          "node"
       ],
    },
