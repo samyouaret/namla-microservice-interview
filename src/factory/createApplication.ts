@@ -1,9 +1,10 @@
-import Application from '../Application';
-import { createHttpApp } from './createHttpServer';
+import Application from '../Application'
+import ApplicationGateway from '../contracts/ApplicationGateway'
+import { createHttpApp } from './createHttpServer'
 
-export default function createRootApp() {
-    let appGateway = createHttpApp();
-    let app = new Application({ appGateway });
+export default function createRootApp (): ApplicationGateway {
+  const appGateway = createHttpApp()
+  const app = new Application({ appGateway })
 
-    return app;
+  return app
 }
