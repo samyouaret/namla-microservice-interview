@@ -1,0 +1,29 @@
+name: CI integration workflow
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+defaults:
+  run: 
+    shell: bash
+
+jobs:
+  test:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: 'actions/checkout@v2'
+        name: 'Checkout repository'
+      
+      - name: 'Install yarn'
+        run: npm install -g yarn
+      - name: 'Install dependencies'
+        run: yarn install
+      - name: "Run tests"
+        run: yarn run test
