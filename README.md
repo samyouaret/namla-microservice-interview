@@ -95,6 +95,10 @@ Back to the root application, it is the starting point to run the application, i
 
 As a concrete example of an HTTP server, we are using **expressjs**.
 
+## Automated tests
+
+Writing automated tests and adding Continuous integration adds more confidence to our application, the test environment is already set up, each pull_request or push to the repository triggers a workflow to run our tests.
+
 ## Decomposing Project folder structure
 
 All the project code resides in the `src` folder, it is written in typescript, when building the project a `build` folder is produced containing transpiled javascript.
