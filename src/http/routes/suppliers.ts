@@ -4,7 +4,7 @@ import SupplierService from '../../services/SupplierService'
 import SuppllierRepository from '../../repositories/SupplierRepository'
 import createJsonStore from '../../factory/createJsonStore'
 
-export default async function suppliersRoutes (app: Application): Promise<Router> {
+export default async function suppliersRoutes(app: Application): Promise<Router> {
   const store = createJsonStore('suppliers')
   await store.init()
   const repository = new SuppllierRepository(store)
@@ -18,6 +18,10 @@ export default async function suppliersRoutes (app: Application): Promise<Router
 
   router.get('/api/suppliers/:id', async (req: express.Request, res: express.Response): Promise<void> => {
     const supplier = await supplierService.getById(+req.params.id)
+    if (supplier === null) {
+      res.sendStatus(404)
+      return
+    }
     res.json(supplier)
   })
 

@@ -1,2 +1,2 @@
 /* eslint-disable */
-jest.setTimeout(450000)
+jest.setTimeout(15000)

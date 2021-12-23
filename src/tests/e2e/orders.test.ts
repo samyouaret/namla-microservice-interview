@@ -39,3 +39,14 @@ test('GET /api/orders/:id (Get order by id)', (done) => {
       done()
     });
 })
+
+test('GET /api/orders/:id (should return 404 if order not found)', (done) => {
+  let randomId = Math.floor(Math.random() * 400000);
+  request.agent(server)
+    .get(`/api/orders/${randomId}`)
+    .expect(404)
+    .end(function (err, res) {
+      expect(err).toBeNull();
+      done()
+    });
+})

@@ -3,8 +3,9 @@ import express, { Router } from 'express'
 import createJsonStore from '../../factory/createJsonStore'
 import OrderService from '../../services/OrderService'
 import OrderRepository from '../../repositories/OrderRepository'
+import { send } from 'process'
 
-export default async function ordersRoutes (app: Application): Promise<Router> {
+export default async function ordersRoutes(app: Application): Promise<Router> {
   const store = createJsonStore('orders')
   await store.init()
   const repository = new OrderRepository(store)
@@ -18,6 +19,10 @@ export default async function ordersRoutes (app: Application): Promise<Router> {
 
   router.get('/api/orders/:id', async (req: express.Request, res: express.Response): Promise<void> => {
     const order = await orderservice.getById(+req.params.id)
+    if (order === null) {
+      res.sendStatus(404)
+      return
+    }
     res.json(order)
   })
 
