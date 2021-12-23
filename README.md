@@ -3,7 +3,7 @@
 ## Tracking the application progress
 
 The dashboard to track the progress of this project is
-found at this link [Azure DevOps]([https://link](https://dev.azure.com/samyouaret13/namla-interview)).
+found on this link [Azure DevOps](https://dev.azure.com/samyouaret13/namla-interview).
 
 ## Running the application
 
