@@ -1,9 +1,10 @@
 # Namla microservice interview
 
+A proposed implementation of a  microservice to serve suppliers and orders data over an HTTP REST API.
+
 ## Tracking the application progress
 
-The dashboard to track the progress of this project is
-found on this link [Azure DevOps](https://dev.azure.com/samyouaret13/namla-interview).
+To track the progress of this project I set up a simple agile(scrum) dashboard on Azure DevOps  on this link [Azure DevOps](https://dev.azure.com/samyouaret13/namla-interview).
 
 ## Running the application
 
@@ -29,7 +30,9 @@ While making it work is good, making it maintainable and testable is more import
 
 Each layer serves a specific purpose, the ultimate goal is the make each layer replaceable and testable on its own without the need for setting up the application.
 
-Testability for just enough purpose is maintained in the application architectures, Built-in quality is a must, it is not a luxury, in summary, this application should allow us at least to do the following steps without breaking down the application.
+Testability for just enough purpose is maintained in the application architectures, Built-in quality is a must, it is not a luxury. 
+
+In summary, this application should allow us at least to do the following steps without breaking down the application.
 
 1. We can Test all parts in isolation.
 2. Any Part(usually a layer) should be replaceable.
@@ -41,4 +44,20 @@ about HTTP servers, databases choices, they should be pluggable into our archite
 
 We talked too much so far, the picture below represents the application structure.
 
+
 ![Application architecture ](./docs/images/application-architecure.svg)
+
+
+Describing the Application architecture, we can see the HTTP server acts just as a **Gateway** for our application, it is not a dependency by itself, Actionly it was the last thing to implement and add the end-to-end testing for the endpoints.
+
+Controllers interact with Application Gateway(HTTP server), and **service**, it uses services to serve those requests.
+Services hold the business logic, although our application has only a few concerns at the moment all business logic should happen in services.
+
+**Repositories** Acts as the **gateway** to access data, it uses Stores(it could be a database as well as it could a file system or in-memory data), Datastore should be replaceable.
+
+To keep dependency as low as possible, the dependency injection follows one direction from Top to down, Contracts(interface) should be set the boundaries and relationships between each layer.
+
+Back to the root application, it is the starting point to run the application, it manages an **Application gateway** which in our case is the HTTP server.
+
+
+As a concrete example of an HTTP server, we are using **expressjs**.
