@@ -4,7 +4,7 @@ A proposed implementation of a  microservice to serve suppliers and orders data 
 
 ## Tracking the application progress
 
-To track the progress of this project I set up a simple agile(scrum) dashboard on Azure DevOps  on this link [Azure DevOps](https://dev.azure.com/samyouaret13/namla-interview).
+To track the progress of this project, I set up a simple agile(scrum) dashboard on Azure DevOps  on this link [Azure DevOps](https://dev.azure.com/samyouaret13/namla-interview).
 
 ## Running the application
 
