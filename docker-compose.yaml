@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  order_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: order-service
+    ports:
+      - "3000:3000"
+    command: node ./build/index.js

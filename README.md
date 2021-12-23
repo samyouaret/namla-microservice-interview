@@ -7,10 +7,20 @@ found on this link [Azure DevOps](https://dev.azure.com/samyouaret13/namla-inter
 
 ## Running the application
 
-For a quick setup, the application can be run with Docker, building the application image.
+For a quick setup, the application can be built and run with **Docker** and `docker-compose`, building the application image.
 
     docker build -t order-service .
 
 Running the application
 
     docker run -dp 3000:3000 order-service
+
+To run the it with docker-compose
+
+    docker-compose up -d
+
+to shut down the application just run
+
+    docker-compose down
+
+
