@@ -3,12 +3,14 @@ import error500 from './500'
 import ordersRoutes from './orders'
 import rootRoutes from './root'
 import suppliersRoutes from './suppliers'
+import swaggerRoute from './swagger'
 
 // loaders will be called in the defined order
 const routes = [
   rootRoutes,
   suppliersRoutes,
   ordersRoutes,
+  swaggerRoute,
   error404,
   error500,
 ]

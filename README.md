@@ -43,6 +43,9 @@ All Endpoints are served with the prefix `/api/`, There are four endpoints:
 3. Get all orders `/api/orders`.
 4. Get an order by id `/api/orders/<id:int>`.
 
+For a quick start, A swagger documentation is found on [api docs](https://localhost:3000/api/docs)
+
+**Note**: the documentation of endpoints has not finished yet.
 
 ## Application structure
 
