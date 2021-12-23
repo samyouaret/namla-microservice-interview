@@ -2,7 +2,7 @@ import createInMemoryStore from '../../../factory/createInMemoryStore'
 import SuppllierRepository from '../../../repositories/SupplierRepository'
 import SupplierService from '../../../services/SupplierService'
 
-const memoryStore = createInMemoryStore("suppliers")
+const memoryStore = createInMemoryStore('suppliers')
 const supplierRepository = new SuppllierRepository(memoryStore)
 const supplierService = new SupplierService(supplierRepository)
 
