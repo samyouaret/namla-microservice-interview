@@ -14,9 +14,9 @@ beforeAll(async () => {
   server = (app.getAppGateway() as any).getServer()
 })
 
-test('GET /api/suppliers (Get all suppliers)', (done) => {
+test('GET /api/orders (Get all orders)', (done) => {
   request.agent(server)
-    .get('/api/suppliers')
+    .get('/api/orders')
     .expect(200)
     .end(function (err, res) {
       expect(err).toBeNull();
@@ -25,15 +25,17 @@ test('GET /api/suppliers (Get all suppliers)', (done) => {
       done()
     });
 })
-test('GET /api/suppliers/:id (Get supplier by id)', (done) => {
-  let supplierId = 1;
+test('GET /api/orders/:id (Get order by id)', (done) => {
+  let orderId = 1;
   request.agent(server)
-    .get(`/api/suppliers/${supplierId}`)
+    .get(`/api/orders/${orderId}`)
     .expect(200)
     .end(function (err, res) {
       expect(err).toBeNull();
-      expect(res.body).toBeDefined();
-      expect(res.body.email).toBeTruthy();
+      expect(res.body).toBeTruthy();
+      expect(res.body.created_at).toBeTruthy();
+      expect(res.body.product_id).toBeTruthy();
+      expect(res.body.user_id).toBeTruthy();
       done()
     });
 })
