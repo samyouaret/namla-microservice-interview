@@ -1,5 +1,7 @@
 # Namla microservice interview
 
+![build tests](https://github.com/samyouaret/namla-microservice-interview/actions/workflows/test-ci.yml/badge.svg)
+
 A proposed implementation of a  microservice to serve suppliers and orders data over an HTTP REST API.
 
 ## Tracking the application progress
