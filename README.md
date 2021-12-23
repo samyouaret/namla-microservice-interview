@@ -34,7 +34,7 @@ So you can avoid stale builds, Then you can run
 
 ### Application endpoints
 
-The application should be server on port `3000` where the host in local is  [localhost:3000](`http://localhost:3000`)
+The application should be server on port `3000` where the host in local is  [api](https://localhost:3000)
 
 All Endpoints are served with the prefix `/api/`, There are four endpoints:
 
