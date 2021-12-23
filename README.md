@@ -32,7 +32,7 @@ So you can avoid stale builds, Then you can run
 
     docker-compose up -d
 
-### application endpoints
+### Application endpoints
 
 The application should be server on port `3000` where the host in local is  [localhost:3000](`http://localhost:3000`)
 
