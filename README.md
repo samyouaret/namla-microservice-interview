@@ -23,7 +23,7 @@ to shut down the application just run
 
     docker-compose down
 
-## Application strecture
+## Application structure
 
 While making it work is good, making it maintainable and testable is more important. The application structure is a layered architecture with respect to the **SOLID** principles.
 
