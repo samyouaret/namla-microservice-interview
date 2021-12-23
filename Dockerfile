@@ -10,6 +10,7 @@ WORKDIR /node-microservice
 
 # COPY jest.* /node-microservice/
 # COPY tsconfig.json /node-microservice/
+EXPOSE 3000
 
 COPY package*.json /node-microservice/
 

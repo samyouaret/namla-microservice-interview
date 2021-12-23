@@ -14,7 +14,7 @@ export default class JsonStore implements StoreInteface, initiable {
 
   async init (): Promise<any> {
     try {
-      const file = path.join(path.dirname(__dirname), 'assets', `${this.storeName}.json`)
+      const file = path.join(path.dirname(path.dirname(__dirname)), 'assets', `${this.storeName}.json`)
       await fs.access(file)
       const fileContent = await fs.readFile(file)
       this.data = JSON.parse(fileContent.toString())

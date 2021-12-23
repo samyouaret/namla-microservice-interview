@@ -11,6 +11,6 @@ For a quick setup, the application can be run with Docker, building the applicat
 
     docker build -t order-service .
 
-Runing the application
+Running the application
 
-    docker run -dt order-service
+    docker run -dp 3000:3000 order-service
