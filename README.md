@@ -89,6 +89,67 @@ Back to the root application, it is the starting point to run the application, i
 
 As a concrete example of an HTTP server, we are using **expressjs**.
 
+## Decomposing Project folder structure
+
+All the project code resides in the `src` folder, it is written in typescript, when building the project a `build` folder is produced containing transpiled javascript.
+
+Typescript has more type-safety than javascript, it helps to show more semantics in code, also interfaces help us define our boundaries and abstraction.
+
+```
+src
+├── Application.ts
+├── bootstrap.ts
+├── config
+│   └── server.config.ts
+├── contracts
+│   ├── ApplicationGateway.ts
+│   ├── Initiable.ts
+│   ├── Startable.ts
+│   └── StoreInteface.ts
+├── database
+│   ├── InMemoryStore.ts
+│   └── JsonStore.ts
+├── factory
+│   ├── createApplication.ts
+│   ├── createHttpServer.ts
+│   ├── createInMemoryStore.ts
+│   └── createJsonStore.ts
+├── helpers
+├── http
+│   ├── HttpServerGateway.ts
+│   └── routes
+├── index.ts
+├── repositories
+│   ├── OrderRepository.ts
+│   └── SupplierRepository.ts
+├── services
+│   ├── OrderService.ts
+│   └── SupplierService.ts
+└── tests
+    ├── e2e
+    │   ├── orders.test.ts
+    │   └── suppliers.test.ts
+    └── unit
+        └── services
+            ├── orders.test.ts
+            └── suppliers.test.ts
+```
+
+the `Application` is the starting point of the application,` bootstrap file and index help us just for a clean setup of the application.
+
+`contracts` folder defines interface as a mechanism to decouple layers.
+
+`factories` are functions that build different application components, like application, HttpServer, Database Stores.
+
+All business logic is found in the `services` folder, each business has its corresponding service.
+
+Accessing data is done via `repositories` that use `stores` in the `database` folder.
+
+`config` and `helpers` give a more clean approach to reuse some functions and configurations.
+
+`http` folder contains the HttpGateway server with routes.
+
+`tests` contains tests for our application components, each nested test folder has a correspondent run command eg. `yarn run test:2e2`.
 
 ## Development Part
 
