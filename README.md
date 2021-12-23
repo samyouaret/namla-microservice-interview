@@ -23,4 +23,22 @@ to shut down the application just run
 
     docker-compose down
 
+## Application strecture
 
+While making it work is good, making it maintainable and testable is more important. The application structure is a layered architecture with respect to the **SOLID** principles.
+
+Each layer serves a specific purpose, the ultimate goal is the make each layer replaceable and testable on its own without the need for setting up the application.
+
+Testability for just enough purpose is maintained in the application architectures, Built-in quality is a must, it is not a luxury, in summary, this application should allow us at least to do the following steps without breaking down the application.
+
+1. We can Test all parts in isolation.
+2. Any Part(usually a layer) should be replaceable.
+3. we should not struggle with refactoring.
+4. Databases, and HTTP servers are just details.
+
+Regrading the fourth(4) point the goal is the delay decisions 
+about HTTP servers, databases choices, they should be pluggable into our architecture, not a dependency.
+
+We talked too much so far, the picture below represents the application structure.
+
+![Application architecture ](./docs/images/application-architecure.svg)
