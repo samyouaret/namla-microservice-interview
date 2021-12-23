@@ -11,15 +11,14 @@ export default async function suppliersRoutes (app: Application): Promise<Router
   const supplierService = new SupplierService(repository)
   const router = express.Router()
 
-  router.get('/suppliers', async (req: express.Request, res: express.Response): Promise<void> => {
+  router.get('/api/suppliers', async (req: express.Request, res: express.Response): Promise<void> => {
     const suppliers = await supplierService.getAll()
-    console.log(suppliers)
     res.json(suppliers)
   })
 
-  router.get('/suppliers/:id', async (req: express.Request, res: express.Response): Promise<void> => {
-    const suppliers = await supplierService.getById(+req.params.id)
-    res.json(suppliers)
+  router.get('/api/suppliers/:id', async (req: express.Request, res: express.Response): Promise<void> => {
+    const supplier = await supplierService.getById(+req.params.id)
+    res.json(supplier)
   })
 
   return router
