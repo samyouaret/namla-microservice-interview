@@ -10,11 +10,15 @@ To track the progress of this project, I set up a simple agile(scrum) dashboard 
 
 For a quick setup, the application can be built and run with **Docker** and `docker-compose`, building the application image.
 
+### Using Docker
+
     docker build -t order-service .
 
-Running the application
+Run the application
 
     docker run -dp 3000:3000 order-service
+
+### Using docker-compose
 
 To run the it with docker-compose
 
