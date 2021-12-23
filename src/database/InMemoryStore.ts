@@ -14,6 +14,18 @@ const memoryStore = {
     { id: 8, first_name: 'Tommy', last_name: 'Albro', email: 'talbro7@virginia.edu', city: 'Căuşeni', address: '479 Charing Cross Hill', phone: '+373 193 608 5170' },
     { id: 9, first_name: 'Ozzie', last_name: 'Drayton', email: 'odrayton8@paypal.com', city: 'Lyon', address: '70 Victoria Trail', phone: '+33 770 752 8790' },
     { id: 10, first_name: 'Milli', last_name: 'Iannello', email: 'miannello9@abc.net.au', city: 'Nyangao', address: '96760 Debs Road', phone: '+255 654 540 1413' }
+  ],
+  orders: [
+    { id: 1, created_at: '12/4/2021', amount: '$12.86', complete: true, product_id: 1, user_id: 1 },
+    { id: 2, created_at: '12/11/2021', amount: '$36.50', complete: false, product_id: 2, user_id: 2 },
+    { id: 3, created_at: '12/11/2021', amount: '$76.82', complete: true, product_id: 3, user_id: 3 },
+    { id: 4, created_at: '11/28/2021', amount: '$80.95', complete: true, product_id: 4, user_id: 4 },
+    { id: 5, created_at: '11/30/2021', amount: '$78.62', complete: true, product_id: 5, user_id: 5 },
+    { id: 6, created_at: '12/22/2021', amount: '$5.24', complete: false, product_id: 6, user_id: 6 },
+    { id: 7, created_at: '12/9/2021', amount: '$64.89', complete: true, product_id: 7, user_id: 7 },
+    { id: 8, created_at: '12/4/2021', amount: '$32.60', complete: true, product_id: 8, user_id: 8 },
+    { id: 9, created_at: '12/16/2021', amount: '$32.15', complete: false, product_id: 9, user_id: 9 },
+    { id: 10, created_at: '12/5/2021', amount: '$38.11', complete: false, product_id: 10, user_id: 10 }
   ]
 }
 
