@@ -1,6 +1,8 @@
-import { Express } from 'express'
-import initiable from './contracts/Initiable'
-import Startable from './contracts/Startable'
+import { Express, Router } from 'express'
+import Application from '../Application'
+import initiable from '../contracts/Initiable'
+import Startable from '../contracts/Startable'
+import routes from './routes'
 
 interface ExpressConfig {
   port: number | string
@@ -10,6 +12,7 @@ interface ExpressConfig {
 class HttpServerGateway implements initiable, Startable {
   private readonly config: ExpressConfig
   private readonly server: Express
+  private context: Application
 
   constructor (server: Express, config: ExpressConfig) {
     this.config = config
@@ -19,8 +22,24 @@ class HttpServerGateway implements initiable, Startable {
   /**
      * A initial method to load ServerGateway controllers
      */
-  async init (): Promise<any> {
+  async init (context: Application): Promise<any> {
     console.log('initiating Http server')
+    this.context = context
+    await this.loadRoutes(context)
+  }
+
+  async loadRoutes (application: Application): Promise<void> {
+    routes.forEach(async (route: any): Promise<void> => {
+      const router: Router = await route(application)
+      this.server.use(router)
+    })
+  }
+
+  /**
+     * A initial method to load ServerGateway controllers
+     */
+  getServer (): Express {
+    return this.server
   }
 
   /**

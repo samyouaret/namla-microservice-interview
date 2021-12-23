@@ -1,6 +1,6 @@
 import { serverConfig } from '../config/server.config'
 import ApplicationGateway from '../contracts/ApplicationGateway'
-import HttpServerGateway from '../HttpServerGateway'
+import HttpServerGateway from '../http/HttpServerGateway'
 import express from 'express'
 
 export function createHttpApp (): ApplicationGateway {

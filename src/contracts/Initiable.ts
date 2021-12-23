@@ -5,5 +5,5 @@
  * before it can start
  */
 export default interface initiable {
-  init: () => Promise<any>
+  init: (context?: any) => Promise<any>
 }

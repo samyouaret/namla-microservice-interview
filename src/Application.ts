@@ -20,7 +20,11 @@ class Application implements initiable, Startable {
      */
   async init (): Promise<any> {
     console.log('init application')
-    await this.appGateway.init()
+    await this.appGateway.init(this)
+  }
+
+  getAppGateway (): ApplicationGateway {
+    return this.appGateway
   }
 
   /**
