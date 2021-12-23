@@ -11,11 +11,7 @@ export default class SuppllierRepository {
     return await this.store.findOne(filter)
   }
 
-  async findById (id: number): Promise<any> {
-    return await this.store.findOne({ id })
-  }
-
   async findMany (filter?: any): Promise<any[]> {
-    return await this.store.findOne(filter)
+    return await this.store.findMany(filter)
   }
 }

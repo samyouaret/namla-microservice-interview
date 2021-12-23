@@ -23,4 +23,6 @@ export function First (arr: any[], filter: any): any {
   if (one === undefined) {
     return null
   }
+
+  return one
 }
