@@ -1,8 +1,10 @@
 # Namla microservice interview
 
-![build tests](https://github.com/samyouaret/namla-microservice-interview/actions/workflows/test-ci.yml/badge.svg)
+![ci tests](https://github.com/samyouaret/namla-microservice-interview/actions/workflows/test-ci.yml/badge.svg)
 
 A proposed implementation of a  microservice to serve suppliers and orders data over an HTTP REST API.
+
+For a quick review of the API, you can access the [Demo](http://20.127.55.150:3000/api) server.
 
 ## Tracking the application progress
 

@@ -19,6 +19,10 @@ export const apiDoc = {
             url: 'http://localhost:3000/api',
             description: 'Local server'
         },
+        {
+            url: 'http://20.127.55.150:3000/api',
+            description: 'Testing server'
+        },
     ],
     // apis: ['../routes/*.ts'],
     // paths: {
