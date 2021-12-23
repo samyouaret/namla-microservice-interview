@@ -24,6 +24,26 @@ to shut down the application just run
 
     docker-compose down
 
+If constantly pulling change from this repository remember to re-build your image by running 
+
+    docker-compose build 
+    
+So you can avoid stale builds, Then you can run
+
+    docker-compose up -d
+
+### application endpoints
+
+The application should be server on port `3000` where the host in local is  [localhost:3000](`http://localhost:3000`)
+
+All Endpoints are served with the prefix `/api/`, There are four endpoints:
+
+1. Get all suppliers `/api/suppliers`.
+2. Get a supplier by id `/api/suppliers/<id:int>`.
+3. Get all orders `/api/orders`.
+4. Get an order by id `/api/orders/<id:int>`.
+
+
 ## Application structure
 
 While making it work is good, making it maintainable and testable is more important. The application structure is a layered architecture with respect to the **SOLID** principles.
