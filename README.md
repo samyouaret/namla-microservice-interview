@@ -164,6 +164,14 @@ Accessing data is done via `repositories` that use `stores` in the `database` fo
 
 `tests` contains tests for our application components, each nested test folder has a correspondent run command eg. `yarn run test:2e2`.
 
+## PinPoints and considerations
+
+At this level, the API endpoints that serve collections(orders and suppliers) need `pagination` to improve the performance, and for better usage of our bandwidth, we neglect this part since this is not the purpose of this project.
+
+We also suppose that authentication and authorization are already handled, although implementing authentication should be done with `jwt` either by calling another microservice to do it, but luckily `jwt` allows us to verify the token without the need for another API call.
+
+supposing that we are doing only verification part not authentication and issuing of tokens, Using express as an HTTP server, that could be done only by adding a middleware.
+
 ## Development Part
 
 If you want to get your hand dirty, you can start by cloning this repository
