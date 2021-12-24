@@ -1,3 +1,6 @@
+/**
+ * Definition doc of swagger/openapi
+ */
 export const apiDoc = {
     openapi: '3.0.1',
     info: {

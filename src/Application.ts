@@ -10,28 +10,28 @@ class Application implements initiable, Startable {
   private readonly appGateway: ApplicationGateway
   private readonly config: ApplicationConfig
 
-  constructor (config: ApplicationConfig) {
+  constructor(config: ApplicationConfig) {
     this.appGateway = config.appGateway
     this.config = config
   }
 
   /**
-     * A initial method to load application config,services,controllers
+     * An initial method to init application gateway
+     * any initial setup could be done here
      */
-  async init (): Promise<any> {
+  async init(): Promise<any> {
     console.log('init application')
     await this.appGateway.init(this)
   }
 
-  getAppGateway (): ApplicationGateway {
+  getAppGateway(): ApplicationGateway {
     return this.appGateway
   }
 
   /**
-     * A starter method to start application, and the application gateway
-     */
-  async start (): Promise<any> {
-    await this.init()
+  * A starter method to start application, and the application gateway
+  */
+  async start(): Promise<any> {
     console.log('start application')
     await this.appGateway.start()
   }

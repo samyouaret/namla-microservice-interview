@@ -20,15 +20,19 @@ class HttpServerGateway implements initiable, Startable {
   }
 
   /**
-     * An initial method to load ServerGateway controllers
-     */
+  * @description An initial method to load ServerGateway routes
+  */
   async init(context: Application): Promise<any> {
     console.log('initiating Http server')
     this.context = context
     await this.loadRoutes(this.context)
   }
 
-  async loadRoutes(application: Application): Promise<void> {
+  /**
+   * @private
+   * @description loading http routes
+  */
+  private async loadRoutes(application: Application): Promise<void> {
     for (const route of routes) {
       let router = await route(application)
       if (router !== undefined) {
@@ -38,15 +42,16 @@ class HttpServerGateway implements initiable, Startable {
   }
 
   /**
-     * A initial method to load ServerGateway controllers
-     */
+  * A method to get the server instance 
+  * @return server instance
+  */
   getServer(): Express {
     return this.server
   }
 
   /**
-     * A starter method to start ServerGateway
-     */
+  * @description A method to start ServerGateway and http server
+  */
   async start(): Promise<any> {
     console.log('starting Server')
     this.server.listen(this.config.port, () => {
