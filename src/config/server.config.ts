@@ -1,4 +1,4 @@
 export const serverConfig = {
-  port: 3000,
-  host: 'http://localhost'
+  port: process.env.PORT || 3000,
+  host: process.env.HOST || 'http://localhost'
 }

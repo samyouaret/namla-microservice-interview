@@ -6,10 +6,12 @@ RUN chown -R node:node /node-microservice
 
 USER node
 
+ENV PORT=3000
+
+ENV HOST=http://ademsamy
+
 WORKDIR /node-microservice
 
-# COPY jest.* /node-microservice/
-# COPY tsconfig.json /node-microservice/
 EXPOSE 3000
 
 COPY package*.json /node-microservice/
