@@ -160,7 +160,7 @@ Accessing data is done via `repositories` that use `stores` in the `database` fo
 
 `config` and `helpers` give a more clean approach to reuse some functions and configurations.
 
-`http` folder contains the HttpGateway server with routes.
+`http` folder contains the HttpGateway server with routes and the `controllers` folder that contains handlers responsible to handle HTTP requests and sending back responses that are mainly provided by `services`.
 
 `tests` contains tests for our application components, each nested test folder has a correspondent run command eg. `yarn run test:2e2`.
 
