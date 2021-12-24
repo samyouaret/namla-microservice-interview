@@ -57,8 +57,6 @@ For a quick start, A swagger documentation is found on your local host after run
 
 A Basic **Postman** collection is available in `docs/postman`, import to postman so you can quickly interact the endpoints.
 
-**Note**: the documentation of endpoints has not finished yet.
-
 ## Application structure
 
 While making it work is good, making it maintainable and testable is more important. The application structure is a layered architecture with respect to the **SOLID** principles.
