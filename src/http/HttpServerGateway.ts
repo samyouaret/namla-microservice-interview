@@ -31,7 +31,9 @@ class HttpServerGateway implements initiable, Startable {
   async loadRoutes(application: Application): Promise<void> {
     for (const route of routes) {
       let router = await route(application)
-      this.server.use(router)
+      if (router !== undefined) {
+        this.server.use(router)
+      }
     }
   }
 
