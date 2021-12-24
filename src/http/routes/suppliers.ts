@@ -3,12 +3,14 @@ import express, { Router } from 'express'
 import SupplierService from '../../services/SupplierService'
 import SuppllierRepository from '../../repositories/SupplierRepository'
 import createJsonStore from '../../factory/createJsonStore'
+import SupplierController from '../controllers/SupplierController'
 
 export default async function suppliersRoutes(app: Application): Promise<Router> {
   const store = createJsonStore('suppliers')
   await store.init()
   const repository = new SuppllierRepository(store)
   const supplierService = new SupplierService(repository)
+  const controller = new SupplierController(supplierService)
   const router = express.Router()
 
   /**
@@ -59,10 +61,7 @@ export default async function suppliersRoutes(app: Application): Promise<Router>
    *                         description: supplier phone number.
    *                         example: "+48 885 887 7459"
    */
-  router.get('/api/suppliers', async (req: express.Request, res: express.Response): Promise<void> => {
-    const suppliers = await supplierService.getAll()
-    res.json({ data: suppliers })
-  })
+  router.get('/api/suppliers', controller.all.bind(controller));
 
   /**
    * @openapi
@@ -109,14 +108,7 @@ export default async function suppliersRoutes(app: Application): Promise<Router>
    *       404:
    *         description: Target supplier not found.
    */
-  router.get('/api/suppliers/:id', async (req: express.Request, res: express.Response): Promise<void> => {
-    const supplier = await supplierService.getById(+req.params.id)
-    if (supplier === null) {
-      res.sendStatus(404)
-      return
-    }
-    res.json(supplier)
-  })
+  router.get('/api/suppliers/:id', controller.one.bind(controller))
 
   return router
 }
