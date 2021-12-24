@@ -1,6 +1,6 @@
 # Namla microservice interview
 
-![ci tests](https://github.com/samyouaret/namla-microservice-interview/actions/workflows/test-ci.yml/badge.svg)
+![ci tests](https://github.com/samyouaret/namla-microservice-interview/actions/workflows/test-ci.yaml/badge.svg)
 
 A proposed implementation of a  microservice to serve suppliers and orders data over an HTTP REST API.
 
