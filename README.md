@@ -59,11 +59,11 @@ A Basic **Postman** collection is available in `docs/postman`, import to postman
 
 ## Application structure
 
-While making it work is good, making it maintainable and testable is more important. The application structure is a layered architecture with respect to the **SOLID** principles.
+While making it work is good, making it maintainable and testable is more important. The application structure is a clean(we strive to) layered architecture with respect to the **SOLID** principles.
 
-Each layer serves a specific purpose, the ultimate goal is the make each layer replaceable and testable on its own without the need for setting up the application.
+Each layer serves a specific purpose, the ultimate goal is to make each layer replaceable and testable on its own without the need for setting up the application.
 
-Testability for just enough purpose is maintained in the application architectures, Built-in quality is a must, it is not a luxury. 
+Testability for just enough purpose is maintained in the application architectures, Built-in quality is a must, not a luxury.
 
 In summary, this application should allow us at least to do the following steps without breaking down the application.
 
