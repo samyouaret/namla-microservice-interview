@@ -97,7 +97,7 @@ As a concrete example of an HTTP server, we are using **expressjs**.
 
 ## Automated tests
 
-Writing automated tests and adding Continuous integration adds more confidence to our application, the test environment is already set up, each pull_request or push to the repository triggers a workflow to run our tests.
+Writing automated tests and adding Continuous integration add more confidence to our application, the test environment is already set up, each pull_request or push to the repository triggers a workflow to run our tests.
 
 ## Decomposing Project folder structure
 
@@ -146,11 +146,11 @@ src
             └── suppliers.test.ts
 ```
 
-the `Application` is the starting point of the application,` bootstrap file and index help us just for a clean setup of the application.
+the `Application` is the starting point of the application, bootstrap file and index help us just for a clean setup of the application.
 
-`contracts` folder defines interface as a mechanism to decouple layers.
+`contracts` folder defines interfaces as a mechanism to decouple layers.
 
-`factories` are functions that build different application components, like application, HttpServer, Database Stores.
+`factories` are functions that create and build different application components, like application, HttpServer, Database Stores.
 
 All business logic is found in the `services` folder, each business has its corresponding service.
 
@@ -158,7 +158,7 @@ Accessing data is done via `repositories` that use `stores` in the `database` fo
 
 `config` and `helpers` give a more clean approach to reuse some functions and configurations.
 
-`http` folder contains the HttpGateway server with routes and the `controllers` folder that contains handlers responsible to handle HTTP requests and sending back responses that are mainly provided by `services`.
+`http` folder contains the `HttpGateway` a server gateway for our application that implements the `ApplicationGateway` contract with routes and the `controllers` folder that contains handlers responsible to handle HTTP requests and sending back responses that are mainly provided by `services`.
 
 `tests` contains tests for our application components, each nested test folder has a correspondent run command eg. `yarn run test:2e2`.
 
@@ -166,7 +166,7 @@ Accessing data is done via `repositories` that use `stores` in the `database` fo
 
 At this level, the API endpoints that serve collections(orders and suppliers) need `pagination` to improve the performance, and for better usage of our bandwidth, we neglect this part since this is not the purpose of this project.
 
-We also suppose that authentication and authorization are already handled, although implementing authentication should be done with `jwt` either by calling another microservice to do it, but luckily `jwt` allows us to verify the token without the need for another API call.
+We also suppose that authentication and authorization are already handled, although implementing authentication should be done with `JWT` either by calling another microservice to do it, but luckily `JWT` allows us to verify the token without the need for another API call.
 
 supposing that we are doing only verification part not authentication and issuing of tokens, Using express as an HTTP server, that could be done only by adding a middleware.
 
