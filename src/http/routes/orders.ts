@@ -44,7 +44,7 @@ export default async function ordersRoutes(app: Application): Promise<Router> {
    *                       complete:
    *                         type: boolean
    *                         description: status of completness of an order.
-   *                         example: false,true
+   *                         example: true
    *                       created_at:
    *                         type: string
    *                         description: valid string date.
@@ -66,6 +66,12 @@ export default async function ordersRoutes(app: Application): Promise<Router> {
    *   get:
    *     summary: Retrieve an order by id.
    *     description: Retrieve a specific  order with its related data like product and user.
+   *     parameters:
+   *      - name: "id"
+   *        in: "path"
+   *        description: "This is the unique identifier for the specific order"
+   *        required: true
+   *        type: "integer"
    *     responses:
    *       200:
    *         description: A list of orders.

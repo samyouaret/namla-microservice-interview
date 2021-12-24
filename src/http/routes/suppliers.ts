@@ -69,6 +69,12 @@ export default async function suppliersRoutes(app: Application): Promise<Router>
    *   get:
    *     summary: Retrieve a supplier by id.
    *     description: Retrieve a specific supplier by its id.
+   *     parameters:
+   *      - name: "id"
+   *        in: "path"
+   *        description: "This is the unique identifier for the specific supplier"
+   *        required: true
+   *        type: "integer"
    *     responses:
    *       200:
    *         description: A Supplier object.
