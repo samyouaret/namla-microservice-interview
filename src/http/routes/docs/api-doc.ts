@@ -24,15 +24,4 @@ export const apiDoc = {
             description: 'Testing server'
         },
     ],
-    // apis: ['../routes/*.ts'],
-    // paths: {
-    //     suppliers: {
-    //         summary: "Returns a list of suppliers.",
-    //         description: "Optional extended description in Markdown.",
-    //         produces: ["application/json"],
-    //         responses: {
-    //             200: { description: "OK" }
-    //         }
-    //     }
-    // }
 };

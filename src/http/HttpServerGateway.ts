@@ -1,4 +1,4 @@
-import { Express, Router } from 'express'
+import { Express } from 'express'
 import Application from '../Application'
 import initiable from '../contracts/Initiable'
 import Startable from '../contracts/Startable'
