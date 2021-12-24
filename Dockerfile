@@ -8,7 +8,7 @@ USER node
 
 ENV PORT=3000
 
-ENV HOST=http://ademsamy
+ENV HOST=http://localhost
 
 WORKDIR /node-microservice
 

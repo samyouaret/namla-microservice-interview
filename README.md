@@ -4,7 +4,7 @@
 
 A proposed implementation of a  microservice to serve suppliers and orders data over an HTTP REST API.
 
-For a quick review of the API, you can access the [Demo](http://20.127.55.150:3000/api) server.
+For a quick review of the API, you can access the [Demo](http://20.127.55.150:3000/api) server, API docs of the demo provide a good start to see the functionalities of the application [Demo docs](http://20.127.55.150:3000/api/docs).
 
 ## Tracking the application progress
 
@@ -12,7 +12,9 @@ To track the progress of this project, I set up a simple agile(scrum) dashboard 
 
 ## Running the application
 
-For a quick setup, the application can be built and run with **Docker** and `docker-compose`, building the application image.
+For a quick setup, the application can be built and run with **Docker** and `docker-compose`, building the application image. you can start by cloning this repository.
+
+    git clone https://github.com/samyouaret/namla-microservice-interview.git
 
 ### Using Docker
 
