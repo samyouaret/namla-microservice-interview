@@ -9,7 +9,6 @@ import swaggerRoute from './swagger'
 
 // loaders will be called in the defined order
 const routes = [
-  helmetRoutes,
   rootRoutes,
   logger,
   suppliersRoutes,
